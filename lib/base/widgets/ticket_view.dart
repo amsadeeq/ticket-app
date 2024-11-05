@@ -1,9 +1,12 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
+import 'package:ticket_app/base/widgets/app_column_text_layout.dart';
 import 'package:ticket_app/base/widgets/app_layoutbuilder_widget.dart';
 import 'package:ticket_app/base/widgets/big_circle.dart';
 import 'package:ticket_app/base/widgets/big_dot.dart';
+import 'package:ticket_app/base/widgets/text_style_fourth.dart';
+import 'package:ticket_app/base/widgets/text_style_third.dart';
 
 class TicketView extends StatelessWidget {
   const TicketView({super.key});
@@ -33,11 +36,7 @@ class TicketView extends StatelessWidget {
                   // Departure and destination with Icons first linw
                   Row(
                     children: [
-                      Text(
-                        "NYC",
-                        style: AppStyles.headLineStyle3
-                            .copyWith(color: Colors.white),
-                      ),
+                      const TextStyleThird(text: "NYC"),
                       Expanded(child: Container()),
                       const BigDot(),
                       Expanded(
@@ -61,11 +60,7 @@ class TicketView extends StatelessWidget {
                       )),
                       const BigDot(),
                       Expanded(child: Container()),
-                      Text(
-                        "LDN",
-                        style: AppStyles.headLineStyle3
-                            .copyWith(color: Colors.white),
-                      ),
+                      const TextStyleThird(text: "LDN"),
                     ],
                   ),
                   const SizedBox(
@@ -73,22 +68,23 @@ class TicketView extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Text(
-                        "New-York",
-                        style: AppStyles.headLineStyle3
-                            .copyWith(color: Colors.white),
+                      const SizedBox(
+                        width: 100,
+                        child: TextStyleFourth(
+                          text: "New-York",
+                        ),
                       ),
                       Expanded(child: Container()),
-                      Text(
-                        "8H 30M",
-                        style: AppStyles.headLineStyle3
-                            .copyWith(color: Colors.white),
+                      const TextStyleFourth(
+                        text: "8H 30M",
                       ),
                       Expanded(child: Container()),
-                      Text(
-                        "London",
-                        style: AppStyles.headLineStyle3
-                            .copyWith(color: Colors.white),
+                      const SizedBox(
+                        width: 100,
+                        child: TextStyleFourth(
+                          text: "London",
+                          align: TextAlign.end,
+                        ),
                       ),
                     ],
                   ),
@@ -99,18 +95,14 @@ class TicketView extends StatelessWidget {
               color: AppStyles.ticketOrange,
               child: const Row(
                 children: [
-                  BigCircle(
-                    isRight: false,
-                  ),
+                  BigCircle(isRight: false),
                   Expanded(
                     child: AppLayoutbuilderWidget(
                       randomDivider: 16,
                       width: 6,
                     ),
                   ),
-                  BigCircle(
-                    isRight: true,
-                  ),
+                  BigCircle(isRight: true),
                 ],
               ),
             ),
@@ -123,52 +115,22 @@ class TicketView extends StatelessWidget {
                   bottomLeft: Radius.circular(21),
                 ),
               ),
-              child: Column(
+              child: const Column(
                 children: [
                   // Departure and destination with Icons first linw
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        "1 May",
-                        style: AppStyles.headLineStyle3
-                            .copyWith(color: Colors.white),
+                      AppColumnTextLayout(topText: "1 May", bottomText: "DATE"),
+                      AppColumnTextLayout(
+                        topText: "8:00am",
+                        bottomText: "Departure Time",
+                        alignment: CrossAxisAlignment.center,
                       ),
-                      Expanded(child: Container()),
-                      Text(
-                        "8:00am",
-                        style: AppStyles.headLineStyle3
-                            .copyWith(color: Colors.white),
-                      ),
-                      Expanded(child: Container()),
-                      Text(
-                        "23",
-                        style: AppStyles.headLineStyle3
-                            .copyWith(color: Colors.white),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 4,
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        "Date",
-                        style: AppStyles.headLineStyle3
-                            .copyWith(color: Colors.white),
-                      ),
-                      Expanded(child: Container()),
-                      Text(
-                        "Departure Time",
-                        style: AppStyles.headLineStyle3
-                            .copyWith(color: Colors.white),
-                      ),
-                      Expanded(child: Container()),
-                      Text(
-                        "Number",
-                        style: AppStyles.headLineStyle3
-                            .copyWith(color: Colors.white),
-                      ),
+                      AppColumnTextLayout(
+                          topText: "23",
+                          bottomText: "Number",
+                          alignment: CrossAxisAlignment.end),
                     ],
                   ),
                 ],

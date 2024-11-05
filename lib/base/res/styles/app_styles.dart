@@ -22,6 +22,11 @@ class AppStyles {
   );
 
   static const TextStyle headLineStyle3 = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+  );
+
+  static const TextStyle headLineStyle4 = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w500,
   );
