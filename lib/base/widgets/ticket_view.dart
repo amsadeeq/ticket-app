@@ -24,7 +24,7 @@ class TicketView extends StatelessWidget {
 
     return SizedBox(
       width: screenSize.width * 0.85,
-      height: 189,
+      height: 179,
       child: Container(
         margin: EdgeInsets.only(right: wholeScreen == true ? 0 : 16),
         child: Column(
@@ -109,10 +109,11 @@ class TicketView extends StatelessWidget {
               child: Row(
                 children: [
                   BigCircle(isRight: false, isColor: isColor),
-                  const Expanded(
+                  Expanded(
                     child: AppLayoutbuilderWidget(
                       randomDivider: 16,
                       width: 6,
+                      isColor: isColor,
                     ),
                   ),
                   BigCircle(isRight: true, isColor: isColor),
@@ -125,9 +126,9 @@ class TicketView extends StatelessWidget {
                 color: isColor == null
                     ? AppStyles.ticketOrange
                     : AppStyles.ticketColor,
-                borderRadius: const BorderRadius.only(
-                  bottomRight: Radius.circular(21),
-                  bottomLeft: Radius.circular(21),
+                borderRadius: BorderRadius.only(
+                  bottomRight: Radius.circular(isColor == null ? 21 : 0),
+                  bottomLeft: Radius.circular(isColor == null ? 21 : 0),
                 ),
               ),
               child: Column(

@@ -5,4 +5,6 @@ class AppMedia {
   static const cityRoom = "$_baseImage/city_view.png";
   static const poolView = "$_baseImage/pool_view.png";
   static const planeSit = "$_baseImage/plane_sit.jpg";
+  static const visaCard = "$_baseImage/visa_card.png";
+  static const qrCode = "$_baseImage/qr_code.png";
 }
